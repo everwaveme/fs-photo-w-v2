@@ -4,46 +4,57 @@ const { CleanWebpackPlugin: CleanPlugin } = require('clean-webpack-plugin'); //�
 const CopyPlugin = require('copy-webpack-plugin'); //копирует файлы или папки в dist
 
 module.exports = {
-    entry: {
-        path: path.resolve(__dirname, 'src/index.js')
-    },
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist')
-    },
+  entry: {
+    path: path.resolve(__dirname, 'src/index.js')
+  },
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+  },
 
-    module: {
-        rules: [
-            {
-                test: /\.(?:js|mjs|cjs)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            ['@babel/preset-env', { targets: "defaults" }]
-                        ]
-                    }
-                }
-            },
-            {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"],
-            },
-            {
-                test: /\.scss$/,
-                use: ["style-loader", "css-loader", "sass-loader"],
-            },
-        ]
-    },
-
-    plugins: [
-        new HtmlPlugin({
-            template: './public/index.html'
-        }),
-        new CleanPlugin(),
-        new CopyPlugin({
-            patterns: [{ from: './static', to: './static' }]
-        }),
+  module: {
+    rules: [
+      {
+        test: /\.(?:js|mjs|cjs)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', { targets: "defaults" }]
+            ]
+          }
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
     ]
+  },
+
+  plugins: [
+    new HtmlPlugin({
+      filename: 'index.html',
+      template: './public/index.html'
+    }),
+    new HtmlPlugin({
+      filename: 'selected-works.html',
+      template: './public/selected-works.html',
+
+    }),
+    new HtmlPlugin({
+      filename: 'city-glow.html',
+      template: './public/city-glow.html',
+
+    }),
+    new CleanPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: './static', to: './static' }]
+    }),
+  ]
 }

@@ -1,0 +1,23 @@
+// fonts
+$font: 'Albert Sans', sans-serif;
+
+// colors
+$color-light: #e4e7e7;
+$color-dark: #38353f;
+$color-accent: #ce414e;
+
+// $color-light: #f0f0f0; //202723
+// $color-dark: #38353f; //242424
+// $color-accent: #ce414e;
+
+// indents
+$gap: 30px;
+$gap-half: 15px;
+
+// breakpoints
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1280px;
+
+$mobile-max: $tablet - 1;
+$tablet-max: $desktop - 1;

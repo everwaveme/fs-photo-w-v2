@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+ font-family: $font;
+ color: $color-dark;
+ background: $color-light;
+
+ &.lock {
+  @media (max-width: $tablet-max) {
+    overflow: hidden;
+  }
+ }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

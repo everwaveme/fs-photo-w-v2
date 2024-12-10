@@ -1,0 +1,167 @@
+.nav {
+
+  @media (max-width: $tablet-max) {
+    // display: none; //не используется из-за невозможности задать transition
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 65%;
+    height: 100vh;
+    padding: 30px 0;
+    background: rgba($color-light, .98);
+    overflow: auto; //позволяет скроллить мобильное меню
+    transition: right .4s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  }
+
+  @media (max-width: $mobile-max) {
+    width: 90%;
+    padding: 30px 0;
+  }
+
+  &.active {
+    // display: block; //не используется из-за невозможности задать transition
+    right: 0;
+  } // открываем и закрываем меню бургер через добавление класса в js
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+
+  @media (max-width: $tablet-max) {
+    flex-direction: column;
+  }
+}
+
+.nav-menu-item {
+  position: relative;
+  margin-left: 25px;
+  padding: 7px 0;
+
+  &:hover .nav-submenu {
+    display: block;
+  }
+
+  @media (max-width: $tablet-max) {
+    margin-left: 50px;
+    padding: 10px 0;
+  }
+
+  @media (max-width: $mobile-max) {
+    margin-left: 40px;
+    padding: 7px 0;
+  }
+}
+
+.nav-menu-link {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba($color-dark, .5);
+  text-decoration: none;
+  transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  &::selection {
+    color: $color-light;
+    background-color: $color-dark;
+  }
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  @media (max-width: $tablet-max) {
+    font-size: 24px;
+  }
+
+  @media (max-width: $mobile-max) {
+    font-size: 22px;
+  }
+}
+
+.nav-submenu {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: -17px;
+  z-index: 888;
+  min-width: 200px;
+  padding: 5px 25px;
+  background-color: $color-light;
+  box-shadow: 0 0 3px rgba($color-dark, .3);
+  border-radius: 3px;
+  list-style: none;
+  animation: submenu .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  @keyframes submenu {
+    from{
+      opacity: 0;
+      transform: translate(0, 15px);
+    }
+
+    to{
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  @media (max-width: $tablet-max) {
+    display: block;
+    position: static;
+    padding: 0 0 0 20px;
+    background: transparent;
+    box-shadow: none;
+    animation: none;
+  }
+}
+
+.nav-submenu-item {
+  margin: 15px 0;
+  animation: submenu-item .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  @keyframes submenu-item {
+    from{
+      opacity: 0;
+      transform: translate(0, 15px);
+    }
+
+    to{
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  @media (max-width: $tablet-max) {
+    margin: 20px 0;
+    animation: none;
+  }
+
+  @media (max-width: $mobile-max) {
+    margin: 15px 0;
+  }
+}
+
+.nav-submenu-link {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: rgba($color-dark, .5);
+  text-decoration: none;
+  transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  &::selection {
+    color: $color-light;
+    background-color: $color-dark;
+  }
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  @media (max-width: $tablet-max) {
+    font-size: 22px;
+  }
+
+  @media (max-width: $mobile-max) {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,38 @@
+.social {
+  display: flex;
+  list-style: none;
+}
+
+.social-item {
+}
+
+.social-slash {
+  display: block;
+  margin: 0 7px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba($color-dark, .8);
+}
+
+.social-link {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba($color-dark, .5);
+  text-decoration: none;
+  transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  &::selection {
+    color: $color-light;
+    background-color: $color-dark;
+  }
+
+  &:hover {
+    color: rgba($color-accent, 1);
+  }
+
+  @media (max-width: $mobile-max) {
+    width: 23px;
+    height: 23px;
+  }
+}
