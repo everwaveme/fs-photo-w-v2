@@ -45,12 +45,26 @@ module.exports = {
     new HtmlPlugin({
       filename: 'selected-works.html',
       template: './public/selected-works.html',
-
     }),
     new HtmlPlugin({
       filename: 'city-glow.html',
       template: './public/city-glow.html',
-
+    }),
+    new HtmlPlugin({
+      filename: 'lost-in-turkiye.html',
+      template: './public/lost-in-turkiye.html',
+    }),
+    new HtmlPlugin({
+      filename: 'better-days.html',
+      template: './public/better-days.html',
+    }),
+    new HtmlPlugin({
+      filename: 'inner-landscapes.html',
+      template: './public/inner-landscapes.html',
+    }),
+    new HtmlPlugin({
+      filename: 'grace.html',
+      template: './public/grace.html',
     }),
     new CleanPlugin(),
     new CopyPlugin({
