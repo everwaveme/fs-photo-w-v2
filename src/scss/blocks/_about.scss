@@ -1,22 +1,23 @@
-.about-cover {
-  @include cover();
-  background-image: url("../images/about-cover.jpg");
-  background-position: bottom;
-
-  @media (max-width: $tablet-max) {
-    background-attachment: scroll;
-  }
+.about {
+  padding: 50px 0;
 }
 
 .about-container {
   @include container();
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-title-wrap {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-title {
-  margin: 80px 0;
-  font-size: 30px;
-  font-weight: 600;
-  text-align: center;
+  margin-top: 250px;
+  font-size: 32px;
+  font-weight: 700;
 
   &::selection {
     color: $color-light;
@@ -33,68 +34,30 @@
   }
 }
 
-.about-wrap {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 85px;
-
-  @media (max-width: $tablet-max) {
-    flex-direction: column-reverse;
-    margin-bottom: 60px;
-  }
+.about-info-wrap {
+  flex-basis: 55%;
 }
 
 .about-info {
-  flex-basis: 65%;
+  display: flex;
+  flex-direction: column;
 }
 
-.about-text {
-  margin-bottom: 18px;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 30px;
+.about-text-wrap {
 
-  &::selection {
-    color: $color-light;
-    background-color: $color-dark;
-  }
-}
-
-.about-list {
-  margin-bottom: 18px;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 30px;
-  list-style-position: inside;
-}
-
-.about-item {
-  &::selection {
-    color: $color-light;
-    background-color: $color-dark;
-  }
-}
-
-.about-link {
-  color: $color-accent;
-  text-decoration: none;
-  transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
-
-  &::selection {
-    color: $color-light;
-    background-color: $color-dark;
-  }
-
-  &:hover {
-    color: rgb($color-accent, .7);
-  }
 }
 
 .about-avatar {
-  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 
-  img::selection {
-    background-color: $color-dark;
+  img {
+    max-width: 250px;
+
+    &::selection {
+      background-color: $color-dark;
+    }
   }
 
   @media (max-width: $tablet-max) {
@@ -107,3 +70,50 @@
     max-width: 250px;
   }
 }
+
+.about-text {
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 27px;
+  color: rgba($color-dark, .6);
+
+  &::selection {
+    color: $color-light;
+    background-color: $color-dark;
+  }
+}
+
+.about-list {
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 27px;
+  color: rgba($color-dark, .6);
+  list-style-position: inside;
+}
+
+.about-item {
+  &::selection {
+    color: $color-light;
+    background-color: $color-dark;
+  }
+}
+
+.about-link {
+  color: rgba($color-accent, .8);
+  text-decoration: none;
+  transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  &::selection {
+    color: $color-light;
+    background-color: $color-dark;
+  }
+
+  &:hover {
+    color: rgb($color-accent, .5);
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+

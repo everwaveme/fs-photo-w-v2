@@ -1,14 +1,6 @@
 .homepage {
+  padding-top: 50vh;
   height: 100vh;
-  background-image: url(../images/fs-main-img.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.homepage-fade {
-  height: 100vh;
-  background: rgba(0, 0, 0, .7);
 }
 
 .homepage-container {
@@ -16,19 +8,19 @@
 }
 
 .homepage-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-end;
+  // align-items: center;
+  margin-bottom: 100px;
+  // height: 100vh;
 }
 
 .homepage-title {
-  margin-bottom: 30px;
-  font-size: 58px;
+  margin-bottom: 20px;
+  margin-right: 50%;
+  font-size: 32px;
   font-weight: 700;
-  text-align: center;
-  color: $color-light;
 
   &::selection {
     color: $color-light;
@@ -41,18 +33,17 @@
   }
 
   @media (max-width: $mobile-max) {
-
     font-size: 42px;
   }
 }
 
 .homepage-subtitle {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
+  margin-right: 50%;
   font-size: 20px;
-  font-weight: 300;
-  line-height: 1.6em;
-  text-align: center;
-  color: $color-light;
+  font-weight: 500;
+  line-height: 27px;
+  color: rgba($color-dark, .5);
 
   &::selection {
     color: $color-light;
@@ -69,31 +60,56 @@
   }
 }
 
-.homepage-btn {
+.homepage-link-wrap {
   display: inline-block;
-  padding: 12px 37px;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+}
+
+.homepage-link {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: $color-light;
-  border: 2px solid $color-light;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  transition: all .2s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  span {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba($color-dark, 1);
+
+    &::selection {
+      color: $color-light;
+      background-color: $color-dark;
+    }
+  }
+
+  img {
+    margin-left: 15px;
+    height: 12px;
+    transition: all .2s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+    &::selection {
+      color: $color-light;
+      background-color: $color-dark;
+    }
+  }
+
+  &:hover {
+    span {
+      color: rgba($color-dark, .7);
+    }
+
+    img {
+      opacity: .7;
+      transform: translate(10px, 0);
+    }
+  }
 
   &::selection {
     color: $color-light;
     background-color: $color-dark;
   }
 
-  &:hover {
-    background-color: $color-light;
-    color: $color-dark;
-  }
-
   @media (max-width: $mobile-max) {
-    padding: 12px 30px;
+
   }
 }

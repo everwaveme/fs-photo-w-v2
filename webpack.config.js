@@ -66,6 +66,14 @@ module.exports = {
       filename: 'grace.html',
       template: './public/grace.html',
     }),
+    new HtmlPlugin({
+      filename: 'about.html',
+      template: './public/about.html',
+    }),
+    new HtmlPlugin({
+      filename: 'exhibitions.html',
+      template: './public/exhibitions.html',
+    }),
     new CleanPlugin(),
     new CopyPlugin({
       patterns: [{ from: './static', to: './static' }]

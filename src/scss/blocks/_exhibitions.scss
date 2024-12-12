@@ -1,26 +1,27 @@
-.exhibitions-cover {
-  @include cover();
-  background-image: url("../images/ex-cover.jpg");
-
-  @media (max-width: $tablet-max) {
-    background-attachment: scroll;
-  }
+.exhibitions {
+  padding: 50px 0;
 }
 
 .exhibitions-container {
   @include container();
-  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
 
   @media (max-width: $mobile-max) {
     margin-bottom: 60px;
   }
 }
 
+.exhibitions-title-wrap {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
 .exhibitions-title {
-  margin: 80px 0;
-  font-size: 30px;
-  font-weight: 600;
-  text-align: center;
+  margin-top: 250px;
+  font-size: 32px;
+  font-weight: 700;
 
   &::selection {
     color: $color-light;
@@ -37,11 +38,15 @@
   }
 }
 
+.exhibitions-text-wrap {
+  flex-basis: 55%;
+}
+
 .exhibitions-text {
   margin-bottom: 18px;
   font-size: 18px;
-  font-weight: 300;
-  line-height: 30px;
+  line-height: 27px;
+  color: rgba($color-dark, .6);
 
   &::selection {
     color: $color-light;
@@ -55,7 +60,7 @@
 }
 
 .exhibitions-link {
-  color: $color-accent;
+  color: rgba($color-accent, .8);
   text-decoration: none;
   transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 
@@ -65,6 +70,6 @@
   }
 
   &:hover {
-    color: rgb($color-accent, .7);
+    color: rgb($color-accent, .5);
   }
 }
