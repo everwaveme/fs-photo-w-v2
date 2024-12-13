@@ -47,19 +47,3 @@
     // font-size: 24px;
   }
 }
-
-.header-burger {
-  display: none;
-
-  @media (max-width: $tablet-max) {
-    display: block;
-    width: 25px;
-    height: 25px;
-    border: none;
-    background: transparent;
-    background-image: url(../../static/header-burger.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-}

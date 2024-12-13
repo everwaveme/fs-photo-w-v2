@@ -9,16 +9,14 @@ AOS.init({
 });
 
 //Open/Close burger menu
-const burger = document.querySelector('.js-header-burger');
+const burger = document.querySelector('.js-nav-burger');
 const nav = document.querySelector('.js-nav');
 const body = document.querySelector('body');
 
 burger.addEventListener('click', () => {
-  if (nav.classList.contains('active') == true) {
-    nav.classList.remove('active');
-    body.classList.remove('lock');
-  } else {
-    nav.classList.add('active');
-    body.classList.add('lock');
-  }
+  nav.classList.toggle('active');
+  burger.classList.toggle('active');
+  body.classList.toggle('lock');
 });
+
+//Dark/Light mode switcher

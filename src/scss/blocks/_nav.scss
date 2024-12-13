@@ -5,21 +5,83 @@
     top: 100%;
     right: -100%;
     z-index: 1000;
-    width: 65%;
+    width: 0;
     height: 100vh;
     padding: 30px 0;
-    background: rgba($color-light, .98);
-    overflow: auto; //позволяет скроллить мобильное меню
-    transition: right .4s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+    background: rgba($color-light, .97);
+    overflow: auto;
+    transition: all .4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
   }
 
   @media (max-width: $mobile-max) {
-    width: 90%;
     padding: 30px 0;
   }
 
   &.active {
     right: 0;
+    width: 100%;
+  }
+}
+
+.nav-burger {
+  display: none;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background: transparent;
+
+  span {
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    left: 0;
+    background-color: $color-dark;
+    border-radius: 10px;
+    transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96)
+  }
+
+  span:nth-child(1) {
+    transform: translateY(-8px);
+  }
+
+  span:nth-child(2) {
+    width: 14px;
+  }
+
+  span:nth-child(3) {
+    width: 21px;
+    transform: translateY(8px);
+  }
+
+  &:hover {
+    span {
+      width: 25px;
+    }
+  }
+
+  &.active {
+    span {
+      width: 100%;
+    }
+
+    span:nth-child(1) {
+      transform: translateY(0) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: translateY(0) rotate(-45deg);
+    }
+  }
+
+  @media (max-width: $tablet-max) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -92,12 +154,12 @@
   animation: submenu .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 
   @keyframes submenu {
-    from{
+    from {
       opacity: 0;
       transform: translate(0, 15px);
     }
 
-    to{
+    to {
       opacity: 1;
       transform: translate(0, 0);
     }
@@ -118,12 +180,12 @@
   animation: submenu-item .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 
   @keyframes submenu-item {
-    from{
+    from {
       opacity: 0;
       transform: translate(0, 15px);
     }
 
-    to{
+    to {
       opacity: 1;
       transform: translate(0, 0);
     }
