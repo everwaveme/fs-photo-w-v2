@@ -1,5 +1,9 @@
 .exhibitions {
   padding: 50px 0;
+
+  @media (max-width: $tablet-max) {
+    padding: 20px 0;
+  }
 }
 
 .exhibitions-container {
@@ -7,8 +11,9 @@
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: $mobile-max) {
-    margin-bottom: 60px;
+  @media (max-width: $tablet-max) {
+    margin-bottom: 30px;
+    flex-direction: column;
   }
 }
 
@@ -29,8 +34,9 @@
   }
 
   @media (max-width: $tablet-max) {
-    margin: 60px 0;
+    margin: 30px 0 50px;
     font-size: 26px;
+    text-align: center;
   }
 
   @media (max-width: $mobile-max) {

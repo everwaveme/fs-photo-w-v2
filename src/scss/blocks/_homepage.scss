@@ -1,6 +1,14 @@
 .homepage {
   padding-top: 50vh;
   height: 100vh;
+
+  @media (max-width: $tablet-max) {
+    padding-top: 40vh;
+  }
+
+  @media (max-width: $mobile-max) {
+    padding-top: 30vh;
+  }
 }
 
 .homepage-container {
@@ -8,17 +16,18 @@
 }
 
 .homepage-wrap {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-end;
-  // align-items: center;
   margin-bottom: 100px;
-  // height: 100vh;
+
+  @media (max-width: $tablet-max) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .homepage-title {
   margin-bottom: 20px;
-  margin-right: 50%;
   font-size: 32px;
   font-weight: 700;
 
@@ -26,20 +35,10 @@
     color: $color-light;
     background-color: $color-dark;
   }
-
-  @media (max-width: $tablet-max) {
-    margin-bottom: 25px;
-    font-size: 48px;
-  }
-
-  @media (max-width: $mobile-max) {
-    font-size: 42px;
-  }
 }
 
 .homepage-subtitle {
   margin-bottom: 15px;
-  margin-right: 50%;
   font-size: 20px;
   font-weight: 500;
   line-height: 27px;
@@ -51,12 +50,7 @@
   }
 
   @media (max-width: $tablet-max) {
-    margin-bottom: 45px;
-  }
-
-  @media (max-width: $mobile-max) {
-    margin-bottom: 40px;
-    font-size: 18px;
+    text-align: center;
   }
 }
 
@@ -107,9 +101,5 @@
   &::selection {
     color: $color-light;
     background-color: $color-dark;
-  }
-
-  @media (max-width: $mobile-max) {
-
   }
 }

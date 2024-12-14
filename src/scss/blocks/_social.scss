@@ -2,6 +2,11 @@
   display: flex;
   align-items: center;
   list-style: none;
+
+  @media (max-width: $mobile-max) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .social-slash {
@@ -9,19 +14,24 @@
   margin: 0 10px;
   font-size: 12px;
   font-weight: 700;
-  color: rgba($color-dark, .8);
+  color: rgba($color-dark, .7);
 
   &::selection {
     color: $color-light;
     background-color: $color-dark;
+  }
+
+  @media (max-width: $mobile-max) {
+    margin: 0 7px;
   }
 }
 
 .social-link {
   display: block;
   font-size: 16px;
+  font-weight: 500;
   line-height: 24px;
-  color: rgba($color-dark, .4);
+  color: rgba($color-dark, .3);
   text-decoration: none;
   transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 
@@ -32,10 +42,5 @@
 
   &:hover {
     color: rgba($color-accent, 1);
-  }
-
-  @media (max-width: $mobile-max) {
-    width: 23px;
-    height: 23px;
   }
 }

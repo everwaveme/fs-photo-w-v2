@@ -26,14 +26,14 @@
 .nav-burger {
   display: none;
   position: relative;
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   border: none;
   background: transparent;
 
   span {
     position: absolute;
-    width: 25px;
+    width: 23px;
     height: 3px;
     left: 0;
     background-color: $color-dark;
@@ -46,11 +46,11 @@
   }
 
   span:nth-child(2) {
-    width: 14px;
+    width: 12px;
   }
 
   span:nth-child(3) {
-    width: 21px;
+    width: 19px;
     transform: translateY(8px);
   }
 
@@ -119,6 +119,7 @@
   font-weight: 500;
   color: rgba($color-dark, .5);
   text-decoration: none;
+  cursor: pointer;
   transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 
   &::selection {
